@@ -1,11 +1,11 @@
 const express = require('express');
-const port = 3001;
+const port = process.env.PORT || 3001;
 const app = new express();
 
 app.use(express.static('public'));
 
-app.get('/',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'public/index.html'));
+app.get('/api/mensagem', (req, res) => {
+    res.send({ express: 'Testando api node' });
 });
 
 app.listen(port,()=>{
