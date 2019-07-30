@@ -15,7 +15,6 @@ const tabelaPontosSchema = new Schema({
 });
 
 const tabelaSchema = new Schema({
-    _id: String,
     colaborador: colaboradorSchema,
     created: colaboradorSchema,
     evento: tabelaPontosSchema

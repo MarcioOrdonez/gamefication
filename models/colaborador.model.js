@@ -8,7 +8,6 @@ const perfilSchema = new Schema({
 });
 
 const colaboradorSchema = new Schema({
-    _id: String,
     name: String,
     email: String,
     password: String,
