@@ -4,19 +4,15 @@
   "description": "Projeto de gameficação",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "node index.js",
+    "server": "cd backend && node index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-dependencies": "cd client && npm install",
+    "server-dependencies": "cd backend && npm install",
+    "install-dependencies": "concurrently --kill-others-on-fail \"npm run server-dependencies\" \"npm run client-dependencies\""
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.6.6"
-  },
   "devDependencies": {
     "concurrently": "^4.1.1"
   }
