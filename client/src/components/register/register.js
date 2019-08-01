@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import './login.css';
+import './register.css';
 import './../../styles.css';
 
-class Login extends Component {
+class Register extends Component {
     state = {
         response: ''
     };
     render() {
         return (
-            <div className="background-login">
-                login
+            <div className="background-register">
+                
             </div>
         );
     }
 }
 
-export default Login;
+export default Register;

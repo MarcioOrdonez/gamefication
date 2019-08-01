@@ -7,7 +7,9 @@ import { BrowserRouter,
     Redirect
 } from 'react-router-dom';
 import Login from './components/login/login';
+import Register from './components/register/register'
 import Dash from './components/dashboard/dashboard';
+
 
 const PrivateRoute= ({ component: Component, ...rest}) => (
     <Route
@@ -26,6 +28,7 @@ const Routes = () => (
         <Switch>
             {/* <Route exact path="/" component={() => <h1>Hello, world</h1>} /> */}
             <Route exact path="/" component={ Login  } />
+            <Route exact path="/register" component={ Register  } />
             <PrivateRoute exact path="/dashboard" component={ Dash } />
         </Switch>
     </BrowserRouter>
