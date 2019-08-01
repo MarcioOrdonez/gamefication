@@ -2,6 +2,7 @@ const Cadastro = require('../models/colaborador.model');
 
 
 exports.cadastro_create = function (req, res) {
+    console.log(`foi`);
     let cadastro = new Cadastro(
         {
             name: req.query.name,
