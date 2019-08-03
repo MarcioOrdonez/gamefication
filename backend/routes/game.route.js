@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const cadastro_controller = require('../controllers/colaborador.controller');
+const register_controller = require('../controllers/register.controller');
 
-router.post('/cadastrar', cadastro_controller.cadastro_create);
+router.post('/cadastrar', register_controller.register_create);
 
 module.exports = router;
