@@ -1,9 +1,9 @@
-const Cadastro = require('../models/colaborador.model');
+const Register = require('../models/user.model');
 
 
-exports.cadastro_create = function (req, res) {
+exports.register_create = function (req, res) {
     console.log(`foi`);
-    let cadastro = new Cadastro(
+    let register = new Register(
         {
             name: req.query.name,
             email: req.query.email,
@@ -12,10 +12,10 @@ exports.cadastro_create = function (req, res) {
         }
     );
 
-    cadastro.save(function (err) {
+    register.save(function (err) {
         if (err) {
             return console.log(err);
         }
-        res.send('cadastro Created successfully')
+        res.send('register created successfully')
     })
 };
