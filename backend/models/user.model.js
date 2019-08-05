@@ -7,7 +7,7 @@ const perfilSchema = new Schema({
     perfilImage: String,
 });
 
-const colaboradorSchema = new Schema({
+const userSchema = new Schema({
     name: {
         type: String,
         lowercase: true,
@@ -31,6 +31,6 @@ const colaboradorSchema = new Schema({
     info: perfilSchema
 });
 
-const Colaborador = mongoose.model('user', colaboradorSchema);
+const User = mongoose.model('user', userSchema);
 
-module.exports = Colaborador;
+module.exports = User;
