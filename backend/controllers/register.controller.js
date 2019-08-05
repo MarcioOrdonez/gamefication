@@ -1,4 +1,5 @@
 const Register = require('../models/user.model');
+const Bcrypt = require('bcrypt');
 
 
 exports.register_create = function (req, res) {
@@ -7,7 +8,7 @@ exports.register_create = function (req, res) {
         {
             name: req.query.name,
             email: req.query.email,
-            password: req.query.password,
+            password: Bcrypt.hashSync(req.query.password, 10),
             isadmin: req.query.isadmin
         }
     );
