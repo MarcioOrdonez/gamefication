@@ -14,6 +14,7 @@ exports.register_create = function (req, res) {
 
     register.save(function (err) {
         if (err) {
+            res.send('Email ja cadastrado');
             return console.log(err);
         }
         res.send('register created successfully')
