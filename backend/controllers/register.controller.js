@@ -8,7 +8,7 @@ exports.register_create = function (req, res) {
         {
             name: req.query.name,
             email: req.query.email,
-            password: Bcrypt.hashSync(req.query.password, 10),
+            password: req.query.password,
             isadmin: req.query.isadmin
         }
     );

@@ -9,6 +9,9 @@ import { BrowserRouter,
 import Login from './components/login/login';
 import Register from './components/register/register'
 import Dash from './components/dashboard/dashboard';
+// import App from './components/example/AppJs';
+// example
+import App2 from './components/example/videoExample';
 
 
 const PrivateRoute= ({ component: Component, ...rest}) => (
@@ -30,6 +33,7 @@ const Routes = () => (
             <Route exact path="/" component={ Login  } />
             <Route exact path="/register" component={ Register  } />
             <PrivateRoute exact path="/dashboard" component={ Dash } />
+            <PrivateRoute exact path="/react" component={ App2 } />
         </Switch>
     </BrowserRouter>
 );
