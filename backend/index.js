@@ -8,7 +8,7 @@ const url = 'mongodb+srv://gamefication:gameimg123@cluster0-gm7yu.mongodb.net/ga
 const game = require('./routes/game.route');
 
 app.use(express.static('public'));
-
+app.use(cors());
 // app.get('/cadastro', (req, res) =>{
 //     mongoose.connect(url, {useNewUrlParser: true},(req, res) =>{
         
