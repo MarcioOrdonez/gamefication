@@ -4,12 +4,13 @@ const Bcrypt = require('bcrypt');
 
 exports.register_create = function (req, res) {
     console.log(`foi`);
+    console.log("name " + req.body.name + " email " + req.body.email + " isadmin " + req.body.isadmin)
     let register = new Register(
         {
-            name: req.query.name,
-            email: req.query.email,
-            password: req.query.password,
-            isadmin: req.query.isadmin
+            name: req.body.name,
+            email: req.body.email,
+            password: Bcrypt.hashSync(req.body.password, 10),
+            isadmin: req.body.isadmin
         }
     );
 
