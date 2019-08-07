@@ -95,13 +95,14 @@ class Register extends Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    // console.log(`The values are ${this.state.person_name}, ${this.state.person_email}, and ${this.state.person_password}`)
+    console.log(`The values are ${this.state.person_name}, ${this.state.person_email}, and ${this.state.person_password}`);
     const obj = {
       name: this.state.person_name,
       email: this.state.person_email,
       password: this.state.person_password,
       isadmin: true
     }
+    console.log(obj + "o que vai enviar");
     axios.post('http://localhost:3001/game/cadastrar', obj)
       .then(res => console.log(res.data));
     this.setState({
@@ -180,7 +181,7 @@ class Register extends Component {
                 variant="contained"
                 color="primary"
                 // className={classes.submit}
-                value="Register"
+                value="Register userSchema"
               >
                 Cadastrar
             </Button>
