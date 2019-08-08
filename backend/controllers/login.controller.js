@@ -11,7 +11,7 @@ exports.login = async  (req, res) => {
         if(!Bcrypt.compareSync(req.query.password, user.password)){
             return res.status(400).send({ message: "The password is invalid" });
         }
-        res.send({ message: "The username and password combination is correct!" });
+        res.send("The username and password combination is correct!" );
         console.log('deu certo');
     } catch (error){
         res.status(500).send(error);
