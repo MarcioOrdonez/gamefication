@@ -17,7 +17,11 @@ exports.login = async (req, res) => {
         var token = jwt.sign({ id }, process.env.SECRET, {
             expiresIn: 300 // expires in 5min
         });
+<<<<<<< HEAD
         //res.status(200).send({ auth: true, token: token });
+=======
+        res.send({ token: token });
+>>>>>>> front
         console.log('deu certo');
         } catch (error) {
             res.status(500).send(error);
