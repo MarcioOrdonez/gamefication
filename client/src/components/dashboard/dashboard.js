@@ -9,7 +9,7 @@ class Dash extends Component {
     render() {
         return (
             <div className="dash">
-                dash
+                <h1>hello!</h1>
             </div>
         );
     }
