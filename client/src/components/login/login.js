@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './login.css';
 import './../../styles.css';
-
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,7 +14,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 // import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
 import axios from 'axios';
 
 function MadeWithLove() {
@@ -29,7 +27,6 @@ function MadeWithLove() {
         </Typography>
     );
 }
-
 // const useStyles = makeStyles(theme => ({
 //   '@global': {
 //     body: {
@@ -56,21 +53,16 @@ function MadeWithLove() {
 // }));
 
 class Login extends Component {
-    // export default function Register() {  
-
+    // export default function Register() {
     // classes = useStyles();
-
     state = {
         response: ''
     };
-
     constructor(props) {
-
         super(props);
         this.onChangePersonEmail = this.onChangePersonEmail.bind(this);
         this.onChangePersonPassword = this.onChangePersonPassword.bind(this);
         this.signIn = this.signIn.bind(this);
-
         this.state = {
             person_email: '',
             person_password: ''
@@ -79,7 +71,7 @@ class Login extends Component {
     onChangePersonEmail(e) {
         this.setState({
             person_email: e.target.value
-        }); 
+        });
     }
     onChangePersonPassword(e) {
         this.setState({
@@ -95,30 +87,20 @@ class Login extends Component {
         }
         console.log(obj + "o que vai enviar");
         axios.post('http://localhost:3001/game/login', obj)
-            .then(res => console.log(res.data))
-            .then(response => {
-                if(response.ok) {
-                    return response.json()
+            .then(res => {
+                if (res.data.auth) {
+                    localStorage.setItem('tokenGame', res.data.token);
+                    this.props.history.push("/dashboard");
                 }
-                throw new Error("Login inválido...");
-            })
-            .then(token => {
-                localStorage.setItem('token', token);
-                this.props.history.push("/admin");
-                return;
             })
             .catch(e => {
-                this.setState({ message: e.message });
-            }); 
-
+                console.log("erro")
+            });
         this.setState({
             person_email: '',
             person_password: ''
         })
     }
-
-    //   localStorage.set('itemName', value)
-    // localStorage.get('itemName')
     render() {
         return (
             <div>
@@ -130,7 +112,7 @@ class Login extends Component {
                         <Avatar
                         // className={classes.avatar}
                         >
-                        <LockOutlinedIcon />
+                            <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
                             Entrar

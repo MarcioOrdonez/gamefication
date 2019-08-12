@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './register.css';
 import './../../styles.css';
-
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,7 +14,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Typography from '@material-ui/core/Typography';
 // import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
 import axios from 'axios';
 
 function MadeWithLove() {
@@ -29,7 +27,6 @@ function MadeWithLove() {
     </Typography>
   );
 }
-
 // const useStyles = makeStyles(theme => ({
 //   '@global': {
 //     body: {
@@ -56,22 +53,17 @@ function MadeWithLove() {
 // }));
 
 class Register extends Component {
-  // export default function Register() {  
-
+  // export default function Register() {
   // classes = useStyles();
-
   state = {
     response: ''
   };
-
   constructor(props) {
-
     super(props);
     this.onChangePersonName = this.onChangePersonName.bind(this);
     this.onChangePersonEmail = this.onChangePersonEmail.bind(this);
     this.onChangePersonPassword = this.onChangePersonPassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
     this.state = {
       person_name: '',
       person_email: '',
@@ -195,4 +187,5 @@ class Register extends Component {
     );
   }
 };
+
 export default Register;
