@@ -28,7 +28,10 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    info: perfilSchema
+    info: perfilSchema,
+    score: {
+        type: String
+    }
 });
 
 const User = mongoose.model('user', userSchema);
