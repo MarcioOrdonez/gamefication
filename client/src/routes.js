@@ -10,6 +10,7 @@ import Login from './components/login/login';
 import Register from './components/register/register'
 import Dash from './components/dashboard/dashboard';
 import Logout from './logout';
+import Teste from './components/example/teste'
 // example
 // import App2 from './components/example/videoExample';
 // import App from './components/example/AppJs';
@@ -31,6 +32,7 @@ const Routes = () => (
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/logout" component={Logout} />
+            <Route exact path="/teste" component={Teste} />
             {/* require login */}
             <PrivateRoute exact path="/dashboard" component={Dash} />
             {/* example
